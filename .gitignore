@@ -3,3 +3,7 @@
 *.pdf
 *.toc
 *.gz
+*.bbl
+*.blg
+*.out
+.idea/
