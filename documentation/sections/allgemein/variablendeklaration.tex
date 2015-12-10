@@ -1,0 +1,9 @@
+\subsection{Variablendeklaration}
+Variablen werden mit dem "let" Keyword initialisiert. Speziell in Rust ist das standardmässig alle Variabeln nicht veränderbar "immutable" sind. Sollen diese veränderbar "mutable" sein muss dies mit dem "mut" keyword mitgeteilt werden.
+
+Ist eine Variable mutable wird aber nie verändert, erzeugt der Compiler eine Warnung. Wird eine immutable Variabel verändert bricht der compilier Vorgang mit einem Fehler ab.
+
+\begin{lstlisting}
+let foo = 5; 		// immutable.
+let mut bar = 5; 	// mutable
+\end{lstlisting}
