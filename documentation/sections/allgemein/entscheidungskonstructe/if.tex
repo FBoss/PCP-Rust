@@ -1,0 +1,22 @@
+\subsubsection{if}
+Wie in vielen Programmiersprachen kann in Rust das if, if else, else Konstrukt verwendet werden.
+
+\begin{lstlisting}
+let x = 5;
+
+if x == 5 {
+println!("x is five!");
+} else if x == 6 {
+println!("x is six!");
+} else {
+println!("x is not five or six :(");
+}
+\end{lstlisting}
+
+Da in Rust dieses Konstrukt eine Expression ist, kann ebenfalls direkt eine Variable initialisiert werden.
+
+\begin{lstlisting}
+let x = 5;
+
+let y = if x == 5 { 10 } else { 15 }; // y: i32
+\end{lstlisting}

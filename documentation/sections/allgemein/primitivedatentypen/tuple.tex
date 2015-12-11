@@ -1,0 +1,27 @@
+\subsubsection{Tuple}
+Ein Tuple ist eine geordnete List fixer Grösse. Stimmt Ihre Signatur (Länge und Datentypen) überein können sie einander zugewiesen werden.
+Zugriff auf die einzelnen Elemente kann mit einem Dekonstruktor let erreicht werden.
+
+\begin{lstlisting}
+let x = (1, "hello"); // x: [i32, &str]
+let y: (i32, &str) = (1, "hello");
+
+let mut a = (1, 2); // a: (i32, i32)
+let b = (2, 3); // b: (i32, i32)
+a = b;
+
+let (x, y, z) = (1, 2, 3);
+println!("x is {}", x);
+\end{lstlisting}
+
+Tuple-Elemente können ebenfalls über ihren Index angesprochen werden. Im Gegensatz zu Array wird der Index mit "." angegeben.
+
+\begin{lstlisting}
+let tuple = (1, 2, 3);
+
+let x = tuple.0;
+let y = tuple.1;
+let z = tuple.2;
+
+println!("x is {}", x);
+\end{lstlisting}

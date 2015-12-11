@@ -1,0 +1,52 @@
+\subsection{Schleifen vorzeitig beenden}
+In Rust gibt es 3 Befehle um Schleifen vorzeitig zu beenden.
+\begin{itemize}
+\item break
+\subitem Bricht den Schleifendurchlauf ab.
+\item return
+\subitem Bricht den Schleifendurchlauf ab und verlässt die aktuelle Funktion.
+\item continue
+\subitem Bricht den aktuellen Schleifendurchlauf ab und beginnt mit dem nächsten.
+\end{itemize}
+
+\begin{lstlisting}
+let mut x = 5;
+let mut done = false;
+
+while !done {
+x += x - 3;
+
+println!("{}", x);
+
+if x % 5 == 0 {
+done = true;
+}
+}
+\end{lstlisting}
+
+Mit dem break Statement kann die obere while Schleife mit einem infinite loop ersetzt und die done variable gestrichen werden.
+
+\begin{lstlisting}
+let mut x = 5;
+
+loop {
+x += x - 3;
+
+println!("{}", x);
+
+if x % 5 == 0 { break; }
+}
+\end{lstlisting}
+
+Schleifen können mit einem Label versehen werden.
+So kann falls mehrere Schleifen verschachtelt sind angegeben werden für welche Schleife der Abbruch Befehl ausgeführt werden soll.
+
+\begin{lstlisting}
+'outer: for x in 0..10 {
+'inner: for y in 0..10 {
+if x % 2 == 0 { continue 'outer; } // continues the loop over x
+if y % 2 == 0 { continue 'inner; } // continues the loop over y
+println!("x: {}, y: {}", x, y);
+}
+}
+\end{lstlisting}
