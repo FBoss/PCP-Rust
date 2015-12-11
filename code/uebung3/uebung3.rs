@@ -1,44 +1,26 @@
-fn search_int(f: Vec<u32>){
+fn sort_vec_int(mut f: Vec<u32>){
+	println!("---------------------------------------------------");
+	f.sort();
 	for x in f.iter() {
-		match *x {
-				1 => println!("one found"),
-				3 => println!("three found"),
-				_ => {},
-			}
-	}
-
+		println!("{}", x );
+		};
 	println!("---------------------------------------------------");
 }
 
-fn search_char(f: Vec<char>){
-	for x in f.iter() {
-		match *x {
-				'a' ... 'm' => println!("letter_front"),
-				'n' ... 'z' => println!("letter_back"),
-				_ => {},
-			}
-	}
-
+fn sort_vec_str(mut f: Vec<&str>){
 	println!("---------------------------------------------------");
-
-}
-
-fn search_string(f: Vec<&str>){
+		f.sort();
 	for x in f.iter() {
-		match *x {
-				"ccds" => println!("String found"),
-				_ => {},
-			}
-	}
+		println!("{}", x );
+	};
 	println!("---------------------------------------------------");
 }
+
+
 
 fn main() {
-	let vec1 = vec![1, 2, 3, 4];
-	let vec2 = vec!['a', 'b','c','d','q','p','z'];
-	let vec3 = vec!["aaa", "bbb","ccds","ccas"];
-
-	search_int(vec1);
-	search_char(vec2);
-	search_string(vec3);
+	let vec1 = vec![4, 3, 1, 3892, 12];
+	let vec2 = vec!["aaaa", "bbb","ccds","ccas", "aadsfa", "bcka", "1gds3"];
+	sort_vec_int(vec1);
+	sort_vec_str(vec2);
 }
