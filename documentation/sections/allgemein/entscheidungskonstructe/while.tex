@@ -1,0 +1,19 @@
+\subsection{while Schleife}
+Die while Schleife ist ideal wenn unbekannt ist wie oft die Schleife wiederholt werden soll.
+
+\begin{lstlisting}
+let mut x = 5; // mut x: i32
+let mut done = false; // mut done: bool
+
+while !done {
+x += x - 3;
+
+println!("{}", x);
+
+if x % 5 == 0 {
+done = true;
+}
+}
+\end{lstlisting}
+
+Ebenfalls ist es möglich mit der while Schleife endlos zu Loopen. Dies sollte jedoch vermieden werden da dafür der "loop" befehlt besser geeignet ist. Der Compiler handhabt die beiden Befehle unterschiedlich. Je mehr Informationen der Compiler erhält desto besser kann er den Code erzeugen.

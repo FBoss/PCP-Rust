@@ -1,0 +1,31 @@
+\subsubsection{for-Schleife}
+Die For-Schleifen in Rust sind ähnlich wie foreach Schleifen in anderen Programmiersprachen. Sie sollte verwendet werden wenn bekannt ist wie oft geloopet werden soll.
+Generell geschrieben sieht die Schleife wiefolgt aus.
+\begin{lstlisting}
+for var in expression {
+code
+}
+\end{lstlisting}
+
+Im Beispiel unten ist x die Variable welche nacheinander die Werte von 0 bis 9 (expression) erhält. Der Ausdruck 0..10 erzeugt einen Iterator mit Startwert 0 bis 10-1 wobei jeder nachfolgede Wert inkrementiert wird. 
+\begin{lstlisting}
+for x in 0..10 {
+println!("{}", x); // x: i32
+}
+\end{lstlisting}
+
+Um Nachzuverfolgen wie oft der Loop bereits durchgeführt werden kann einer Enumerator verwendet werden. Im Beispiel unten wird bei jedem Schleifendurchlauf dem Tupel (i,j) in der i Komponente der Durchlaufnummer (beginnend mit 0) und in j der Wert des Durchlaufs zugeweisen.
+
+\begin{lstlisting}
+for (i,j) in (5..10).enumerate() {
+println!("i = {} and j = {}", i, j);
+}
+\end{lstlisting}
+Output:
+\begin{lstlisting}
+i = 0 and j = 5
+i = 1 and j = 6
+i = 2 and j = 7
+i = 3 and j = 8
+i = 4 and j = 9
+\end{lstlisting}
