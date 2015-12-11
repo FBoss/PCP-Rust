@@ -1,0 +1,9 @@
+\subsubsection{functions}
+
+Funktionen haben ebenfalls einen Typ. Um Beispiel unten ist x ein Pointer auf eine Funktion die einen i32 als Paramter hat und einen i32 als Rückgabewert.
+
+\begin{lstlisting}
+fn foo(x: i32) -> i32 { x }
+
+let x: fn(i32) -> i32 = foo;
+\end{lstlisting}

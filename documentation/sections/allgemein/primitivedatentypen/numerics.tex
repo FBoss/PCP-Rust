@@ -1,0 +1,35 @@
+\subsubsection{Numerische Datentypen}
+Rust unterscheidet zwischen mehreren Kategorien: signed und unsigned, fixed and variable, floating-point and integer.
+
+Der Datentyp besteht aus 2 Teilen. Dem Typ und der Grösse.
+Zum Beispiel ist der "u16" Typ ein unsigned integer mit 16 bit Grösse.
+
+Wird bei einer Zahl kein Typ angegeben gilt standardmässig f64 oder i32. Um einen Datentyp explizit anzugeben wird der Datentyp mit einem ":" von der Variablenbezeichnung angegeben.
+
+\begin{lstlisting}
+let x = 42; // x has type i32
+let y = 1.0; // y has type f64
+let z : i8 = 8 // z has type i8
+\end{lstlisting}
+
+Folgende primititven Datentypen existieren in Rust: 
+\begin{itemize}
+\item i8
+\item i16
+\item i32
+\item i64
+\item u8
+\item u16
+\item u32
+\item u64
+\item isize
+\item usize
+\item f32
+\item f64
+\end{itemize}
+
+Fixed Size Typen sind alle die eine Zahl (8,16,32,64) tragen (z.B. i8, f32, u64,...).
+
+Variable Grössen sind "isize" und "usize". Ihre Grösse richtet sich nach der Pointergrösse der darunterliegenden Maschine.
+
+Die Floating Point Datentypen "f32" und "f64" folgen der  IEEE-754 Single und Double Precision Konvention.
