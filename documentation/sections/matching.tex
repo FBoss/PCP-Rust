@@ -1,1 +1,17 @@
 \section{Matching}
+In einer Applikation ist es oft nicht ausreichend ein einfaches \textcolor{blue}{if}/\textcolor{purple}{else}
+Konstrukt zu benutzen. Wenn man zum Beispiel mehr als nur zwei Optionen hat oder die Bedingungen sehr komplex werden. Für solche Fälle hat Rust das Schlüsselwort \textbf{match}.
+
+\begin{lstlisting}
+let x = 5;
+
+match x {
+    1 => println!("one"),
+    2 => println!("two"),
+    3 => println!("three"),
+    4 => println!("four"),
+    5 => println!("five"),
+    _ => println!("something else"),
+}
+\end{lstlisting}
+Mit \textbf{match} wird der Wert mit allen Statements verglichen. Trifft eines zu wird der Programmierarm dahinter ausgeführt. Als letztes Statement jedes \textbf{match}es muss das Underscore Pattern \_ stehen. Damit ein \textbf{match} vollständig ist. Ohne dieses Pattern würde das Programm nicht compilieren.
