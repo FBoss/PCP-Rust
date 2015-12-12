@@ -1,0 +1,11 @@
+\subsection{Ignoring Bindings}
+Man kann mit \_ in Pattern den Typ oder auch den Wert missachten.
+
+\begin{lstlisting}
+let some_value: Result<i32, &'static str> = Err("There was an error");
+
+match some_value {
+Ok(value) => println!("got a value: {}", value),
+Err(_) => println!("an error occurred"),
+}
+\end{lstlisting}

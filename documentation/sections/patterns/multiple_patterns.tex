@@ -1,0 +1,12 @@
+\subsection{Multiple Patterns}
+Mit \textbf{\textcolor{blue}{$\vert$}} kann man mehrere Patterns vergleichen.
+
+\begin{lstlisting}
+let x = 1;
+
+match x {
+    1 | 2 => println!("one or two"),
+    3 => println!("three"),
+    _ => println!("anything"),
+}
+\end{lstlisting}

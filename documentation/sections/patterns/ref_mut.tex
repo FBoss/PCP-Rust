@@ -1,0 +1,18 @@
+\subsection{Ref and Ref Mut}
+Für die Referenz einer Variable, steht das Schlüsselwort \textbf{ref}. Dieses kann man auch mit einer veränderbaren Referenz gebrauchen \textbf{ref mut}.
+
+\begin{lstlisting}
+let x = 5;
+
+match x {
+     ref r => println!("Got a reference to {}", r),
+}
+\end{lstlisting}
+\hrulefill\\
+\begin{lstlisting}
+let mut x = 5;
+
+match x {
+    ref mut mr => println!("Got a mutable reference to {}", mr),
+}
+\end{lstlisting}

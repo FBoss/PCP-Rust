@@ -1,0 +1,22 @@
+\subsection{Ranges}
+Man kann auch über einen Bereich Werte vergleichen. Dafür ist das Pattern \textbf{\textcolor{blue}{...}}
+
+\begin{lstlisting}
+let x = 1;
+
+match x {
+     1 ... 5 => println!("one through five"),
+     _ => println!("anything"),
+}
+\end{lstlisting}
+\hrulefill\\\\
+Sogar über mehrere \textcolor{blue}{char}s möglich
+\begin{lstlisting}
+let x = 'c';
+
+match x {
+    'a' ... 'j' => println!("early letter"),
+    'k' ... 'z' => println!("late letter"),
+    _ => println!("something else"),
+}
+\end{lstlisting}
