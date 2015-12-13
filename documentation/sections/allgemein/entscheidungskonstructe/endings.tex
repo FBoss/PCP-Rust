@@ -14,13 +14,13 @@ let mut x = 5;
 let mut done = false;
 
 while !done {
-x += x - 3;
+	x += x - 3;
 
-println!("{}", x);
+	println!("{}", x);
 
-if x % 5 == 0 {
-done = true;
-}
+	if x % 5 == 0 {
+		done = true;
+	}
 }
 \end{lstlisting}
 
@@ -30,11 +30,11 @@ Mit dem break Statement kann die obere while Schleife mit einem infinite loop er
 let mut x = 5;
 
 loop {
-x += x - 3;
+	x += x - 3;
 
-println!("{}", x);
+	println!("{}", x);
 
-if x % 5 == 0 { break; }
+	if x % 5 == 0 { break; }
 }
 \end{lstlisting}
 
@@ -43,10 +43,10 @@ So kann falls mehrere Schleifen verschachtelt sind angegeben werden für welche 
 
 \begin{lstlisting}
 'outer: for x in 0..10 {
-'inner: for y in 0..10 {
-if x % 2 == 0 { continue 'outer; } // continues the loop over x
-if y % 2 == 0 { continue 'inner; } // continues the loop over y
-println!("x: {}, y: {}", x, y);
-}
+	'inner: for y in 0..10 {
+		if x % 2 == 0 { continue 'outer; } // continues the loop over x
+		if y % 2 == 0 { continue 'inner; } // continues the loop over y
+		println!("x: {}, y: {}", x, y);
+	}
 }
 \end{lstlisting}

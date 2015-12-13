@@ -3,14 +3,14 @@ Die For-Schleifen in Rust sind ähnlich wie foreach Schleifen in anderen Program
 Generell geschrieben sieht die Schleife wiefolgt aus.
 \begin{lstlisting}
 for var in expression {
-code
+	code
 }
 \end{lstlisting}
 
 Im Beispiel unten ist x die Variable welche nacheinander die Werte von 0 bis 9 (expression) erhält. Der Ausdruck 0..10 erzeugt einen Iterator mit Startwert 0 bis 10-1 wobei jeder nachfolgede Wert inkrementiert wird. 
 \begin{lstlisting}
 for x in 0..10 {
-println!("{}", x); // x: i32
+	println!("{}", x); // x: i32
 }
 \end{lstlisting}
 
@@ -18,7 +18,7 @@ Um Nachzuverfolgen wie oft der Loop bereits durchgeführt werden kann einer Enum
 
 \begin{lstlisting}
 for (i,j) in (5..10).enumerate() {
-println!("i = {} and j = {}", i, j);
+	println!("i = {} and j = {}", i, j);
 }
 \end{lstlisting}
 Output:

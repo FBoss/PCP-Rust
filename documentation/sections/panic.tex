@@ -7,7 +7,7 @@ Nach dem join kann dann überprüft werden ob der Thread eine panic ausgelöst h
 use std::thread;
 
 let handle = thread::spawn(move || {
-panic!("oops!");
+	panic!("oops!");
 });
 
 let result = handle.join();

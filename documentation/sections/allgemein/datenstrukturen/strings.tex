@@ -11,12 +11,12 @@ println!("{}", s);
 Strings will coerce into &str with an &:
 
 fn takes_slice(slice: &str) {
-println!("Got: {}", slice);
+	println!("Got: {}", slice);
 }
 
 fn main() {
-let s = "Hello".to_string();
-takes_slice(&s);
+	let s = "Hello".to_string();
+	takes_slice(&s);
 }
 \end{lstlisting}
 
