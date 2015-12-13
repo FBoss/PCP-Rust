@@ -1,0 +1,16 @@
+\section{Panics}
+
+Mit "panic!" kann ein Thread gecrashed werden.
+Nach dem join kann dann überprüft werden ob der Thread eine panic ausgelöst hat oder nicht. In Java entspricht dies etwa "throw new RunTimeException"
+
+\begin{lstlisting}
+use std::thread;
+
+let handle = thread::spawn(move || {
+panic!("oops!");
+});
+
+let result = handle.join();
+
+assert!(result.is_err());
+\end{lstlisting}
