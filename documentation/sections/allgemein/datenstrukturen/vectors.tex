@@ -1,0 +1,17 @@
+\subsubsection{Vektoren}
+
+Vektoren sind Arrays variabler Länge. Speziell ist das bei einem Vektor der Index mit einem usize Datentyp angegeben werden muss.
+Wird nicht der usize Datentyp angegeben kompiliert Rust das Programm nicht.
+
+\begin{lstlisting}
+let v = vec![1, 2, 3, 4, 5];
+
+let i: usize = 0;
+let j: i32 = 0;
+
+// works
+v[i];
+
+// doesn't
+v[j];
+\end{lstlisting}

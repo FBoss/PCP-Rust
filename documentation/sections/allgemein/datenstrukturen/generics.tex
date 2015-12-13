@@ -1,0 +1,14 @@
+\subsubsection{Generics}
+
+Generics sind eine Art Variabler Datentyp der erst an der benötigten Stelle im Code definiert wird. Im Beispiel unten wird ein struct erzeugt für den der Datentyp für x und y Variablen nicht festgelegt ist. Erst bei der Variablen initialisierung wird dieser zugewiesen.
+
+
+\begin{lstlisting}
+struct Point<T> {
+x: T,
+y: T,
+}
+
+let int_origin = Point { x: 0, y: 0 };
+let float_origin = Point { x: 0.0, y: 0.0 };
+\end{lstlisting}

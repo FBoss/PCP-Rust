@@ -1,0 +1,13 @@
+\subsubsection{Enums}
+
+Mit Enums können Variablen angelegt werden die ein Set von verschieden oder gleichen Datentypen annehmen kann.
+Im Beispiel unten kann der Enum 4 verschiedene Typen annehmen. (struct Quit, struct ChangeColor, struct Move, function Write())
+Mit Patterns kann anschliessend überprüft werden um welchen Datentyp es sich handelt.
+\begin{lstlisting}
+enum Message {
+	Quit,
+	ChangeColor(i32, i32, i32),
+	Move { x: i32, y: i32 },
+	Write(String),
+}
+\end{lstlisting}

@@ -1,0 +1,60 @@
+\subsubsection{Strings}
+Strings sind eine folge vom Unicode Charactern ecodiert mit UTF-8 und können null Bytes enthalten. Es gibt 2 Verschiedene String Typen in Rust ("\&str" und "String"). Der Unterschied liegt darin das \&str eine Fixe Länge hat und immutable ist. Mit der Methode ".to\_string()" kann er einfach innen String umgewandelt werden String hingegen ist variabel in der Länge und mutable. Die Umwandlung in den Typ \&str kann mit dem \& Operator erreicht werden.  angesprochen werden.
+
+\begin{lstlisting}
+let mut s = "Hello".to_string(); // mut s: String
+println!("{}", s);
+
+s.push_str(", world.");
+println!("{}", s);
+
+Strings will coerce into &str with an &:
+
+fn takes_slice(slice: &str) {
+println!("Got: {}", slice);
+}
+
+fn main() {
+let s = "Hello".to_string();
+takes_slice(&s);
+}
+\end{lstlisting}
+
+
+Da Strings UTF-8 kodiert sind kann ein Charakter ein oder mehrere Byte lang sein. Deshalb kann ein Charakter nicht über einen Index angesprochen werden. Mit der Methode ".nth(1)" (entspricht ca. [1] bei einem Array) kann ein einzelnes Zeichen angesprochen werden. Dazu wird jedoch der ganze String von Anfang an durchlaufen was Zeitintensiv ist.
+
+\begin{lstlisting}
+let hachiko = "Hachiko";
+
+for b in hachiko.as_bytes() {
+	print!("{}, ", b);
+}
+
+println!("");
+
+for c in hachiko.chars() {
+	print!("{}, ", c);
+}
+
+println!("");
+let dog = hachiko.chars().nth(1); // kinda like hachiko[1]
+\end{lstlisting}
+
+
+Ein \&str kann am Ende eines String angehängt werden.
+
+\begin{lstlisting}
+let hello = "Hello ".to_string();
+let world = "world!";
+
+let hello_world = hello + world;
+\end{lstlisting}
+
+Um einen String am Ende eines String anzuhägen muss dieser zuerst in ein \&str umgewandelt werden.
+
+\begin{lstlisting}
+let hello = "Hello ".to_string();
+let world = "world!".to_string();
+
+let hello_world = hello + &world;
+\end{lstlisting}

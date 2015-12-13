@@ -1,0 +1,18 @@
+\subsubsection{Structs}
+
+Strukturen vereinen mehrere Datentypen zu einem einzigen. Nach der Konvention Strukturen beginnen mit einem Grossbuchstaben und enhalten keine Underlines. (PointInSpace anstelle von Point\_InS\_pace) 
+
+\begin{lstlisting}
+struct Point {
+x: i32,
+y: i32,
+}
+
+fn main() {
+let mut point = Point { x: 0, y: 0 };
+
+point.x = 5;
+
+println!("The point is at ({}, {})", point.x, point.y);
+}
+\end{lstlisting}
