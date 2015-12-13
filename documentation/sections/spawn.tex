@@ -1,1 +1,25 @@
 \section{Spawn}
+
+Mit Spawn kann ein neuer Thread erzeugt werden. Mit dem "move" Keyword werden die Variablen im aktuellen Scope in den Thread Scope übertragen. Die beiden || sind überraschenderweise ein UND (\&\& in anderen Sprachen). Rust legt grossen Wert auf die Speichersicherheit. Teilen sich mehrere Treads eine Variable muss ein Mutex erzeugt werden. Ist dies nicht der Fall kann das Programm nicht kompiliert werden. So versucht Rust Race Conditions zu verhindern.
+Im Beispiel unten ist der Datentyp von Data mehrfach gekapselt. Arc entspricht hierbei "Serializeable" aus Java. Anschliessend wir dein Mutex für einen Vektor erzeugt.
+Innerhalb des Thread (Spawn) Codes wird data mit ".unwrap()" entpackt und der mutex mit ".lock()" erstellt. Am Ende des Threads wird der Lock automatisch wieder freigegeben.
+
+
+\begin{lstlisting}
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+fn main() {
+let data = Arc::new(Mutex::new(vec![1, 2, 3]));
+
+for i in 0..3 {
+let data = data.clone();
+thread::spawn(move || {
+let mut data = data.lock().unwrap();
+data[i] += 1;
+});
+}
+
+thread::sleep_ms(50);
+}
+\end{lstlisting}
